@@ -1,0 +1,79 @@
+Data Analysis Summary
+
+            #another way of reading csv file beside pandas
+            #import csv
+            #f = open('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories.csv')
+            #csv_f = csv.reader(f)
+            #for row in csv_f:
+            #  print row
+
+import pandas as pd
+1. event
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/events.csv')
+#print df
+print len(df.event_id)
+print len(df.event_id.unique())
+
+Result:
+3252950
+3252950
+
+print len(df.device_id)
+print len(df.device_id.unique())
+
+Result:
+3252950
+60865
+
+2. app_event
+
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/app_events.csv')
+#print df
+print len(df.app_id)
+print len(df.app_id.unique())
+
+Result: 
+32473067
+19237
+
+print len(df.event_id)
+print len(df.event_id.unique())
+
+Result:
+32473067
+1488096
+
+3. app_labels
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/app_labels.csv')
+#print df.head(10)
+print len(df.app_id)
+print len(df.app_id.unique())
+
+Result:
+459943
+113211
+
+4. label_categories
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories.csv')
+#print df.head(10)
+print len(df.label_id)
+print len(df.label_id.unique())
+
+Result:
+930
+930
+
+5. phone_brand_device_model
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/phone_brand_device_model.csv')
+#print df.head(10)
+print len(df.device_id)
+print len(df.device_id.unique())
+
+Result:
+187245
+186716
+
+
+
+
+
