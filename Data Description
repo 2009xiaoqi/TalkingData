@@ -25,6 +25,9 @@ Result:
 3252950
 60865
 
+Data Preprocesing:
+Not necessary
+
 2. app_event
 
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/app_events.csv')
@@ -62,6 +65,9 @@ print len(df.label_id.unique())
 Result:
 930
 930
+
+Data Preprocessing:
+Not necessary
 
 5. phone_brand_device_model
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/phone_brand_device_model.csv')
