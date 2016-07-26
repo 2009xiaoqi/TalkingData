@@ -56,6 +56,25 @@ Result:
 459943
 113211
 
+Data Preprocessing:
+df_uniq_app = df.drop_duplicates()
+print len(df_uniq_app.app_id)
+print len(df_uniq_app.app_id.unique())
+
+Result:
+459452
+113211
+
+Solution: remove only one duplicated row, since the app_id in this table is not primary key
+(app_id and label_id can be used as composite PF), no need to do further clean up.
+
+df_uniq_app.to_csv('app_labels_cleaned.csv')
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/app_labels_cleaned.csv')
+print len(df.app_id)
+
+Result:
+459452
+
 4. label_categories
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories.csv')
 #print df.head(10)
