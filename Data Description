@@ -91,6 +91,7 @@ Solution: remove (186722- 186716)*2 = 12 lines of duplicated rows and save it as
 df_final = df_uniq_model.drop_duplicates(subset = 'device_id',keep = False)
 print len(df_final.device_id)
 print len(df_final.device_id.unique())
+df_final.to_csv('phone_brand_device_model_cleaned.csv')
 
 Result: 
 186710
