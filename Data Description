@@ -76,4 +76,11 @@ Result:
 
 
 
+df_uniq_model = df.drop_duplicates()
+#print df.drop_duplicates()
+#print len(df.device_id)
+#print len(df.device_id.unique())\
+#print df_uniq_model.device_id.duplicated()
 
+#df_dup_id = df_uniq_model.groupby(df_uniq_model.device_id).size()
+df_dup_id = df_uniq_model.groupby(['device_id']).size()
