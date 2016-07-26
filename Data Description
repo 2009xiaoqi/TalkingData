@@ -73,8 +73,28 @@ Result:
 187245
 186716
 
+Data Preprocessing:
+df_uniq_model = df.drop_duplicates()
+print len(df_uniq_model.device_id)
+print len(df_uniq_model.device_id.unique())
 
+Result:
+186722
+186716
 
+Solution: remove (186722- 186716)*2 = 12 lines of duplicated rows and save it as phone_brand_device_model_cleaned.csv file
+
+#print df_uniq_model[(df_uniq_model.groupby('device_id').transform('count')>1).values].drop_duplicates() 
+#print len(df_uniq_model[(df_uniq_model.groupby('device_id').transform('count')>1).values].drop_duplicates())
+#the above sentence is used to find the 6 duplicated rows, totally 12 rows
+
+df_final = df_uniq_model.drop_duplicates(subset = 'device_id',keep = False)
+print len(df_final.device_id)
+print len(df_final.device_id.unique())
+
+Result: 
+186710
+186710
 
 df_uniq_model = df.drop_duplicates()
 #print df.drop_duplicates()
