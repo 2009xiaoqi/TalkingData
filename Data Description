@@ -88,12 +88,14 @@ Result:
 Data Preprocessing: Remove lines which category = Null/Unknown
 df_notNull = df[df.category.notnull()]
 df_notNull_removeUnknown = df_notNull.loc[df_notNull.category != 'unknown']
+df_notNull_removeUnknown.to_csv('label_categories_cleaned.csv')
 
 Result:
 print len(df_notNull) -------927
 print len(df_notNull_removeUnknown) -------901
 print len(df)  -----930
-
+df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories_cleaned.csv')
+print len(df) ------901
 
 5. phone_brand_device_model
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/phone_brand_device_model.csv')
