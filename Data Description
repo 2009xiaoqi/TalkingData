@@ -85,8 +85,15 @@ Result:
 930
 930
 
-Data Preprocessing:
-Not necessary
+Data Preprocessing: Remove lines which category = Null/Unknown
+df_notNull = df[df.category.notnull()]
+df_notNull_removeUnknown = df_notNull.loc[df_notNull.category != 'unknown']
+
+Result:
+print len(df_notNull) -------927
+print len(df_notNull_removeUnknown) -------901
+print len(df)  -----930
+
 
 5. phone_brand_device_model
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/phone_brand_device_model.csv')
