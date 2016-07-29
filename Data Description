@@ -75,6 +75,17 @@ print len(df.app_id)
 Result:
 459452
 
+Follow up processing: delete those rows which the id in app_label is not in label_category
+
+df_label =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/app_labels_cleaned.csv')
+df_category =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories_cleaned.csv')
+#df = pd.merge(df_label,df_category, on = 'label_id')--- used to join two dataframe with same key
+print df_label[df_label.label_id.isin(df_category.label_id)]
+#print df_label[~df_label.label_id.isin(df_category.label_id)] --- used to get the opposte result: get rows in app_label which are not in label_category
+
+Result:
+456698
+
 4. label_categories
 df =pd.read_csv('C:/Users/jessiel/Desktop/Myself/Kaggle/label_categories.csv')
 #print df.head(10)
