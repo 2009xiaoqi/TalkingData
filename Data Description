@@ -142,7 +142,37 @@ Result:
 186710
 186710
 
+Combine training data all together
+df_train = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/gender_age_train.csv')
+df_event = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/events.csv')
+df_app = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/app_labels_cleaned2.csv')
+df_device = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/phone_brand_device_model_cleaned.csv')
+df_test = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/gender_age_test.csv')
+df_sample = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/sample_submission.csv')
+df_app_event = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/app_events.csv')
+df_label_category = pd.read_csv('C:/Users/jessiel/Desktop/Kaggle/label_categories_cleaned.csv')
+#print df_app_event[df_app_event['is_installed'] == 0]
+#print df_sample
+#print df_event.dtypes
 
+#print len(df_train.device_id.unique())
+#print len(df_train.group.unique())
+
+#print len(df[df.device_id.isin(df_device.device_id)])
+#print len(df_train.device_id.isin(df_event.device_id))
+#print df_train.device_id.isin(df_event.device_id)
+#print len(df_event.device_id.isin(df_train.device_id))
+df = pd.merge(df_train, df_event, on = 'device_id', how = 'inner')
+#print df.head(20)
+#print len(df.device_id.unique())
+#print df.head(20)
+df1 = pd.merge(df, df_app_event, on = 'event_id', how = 'inner')
+#print df1.head(3)
+
+df2 = pd.merge(df1, df_app, on = 'app_id', how = 'inner')
+
+df3 = pd.merge(df2, df_label_category, on = 'label_id', how = 'inner')
+print df3.head(10)
 
 Appendix: Some other source code
 (df_uniq_model = df.drop_duplicates()
